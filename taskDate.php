@@ -2,7 +2,7 @@
 
     session_start();
 
-    $userID = ['User_ID'];
+    $userID = $_SESSION['User_ID'];
 
     $query = $db->prepare('SELECT Due_date FROM Tasks WHERE User_ID=:userID');
     $query->bindValue(':userID', $userID, SQLITE3_INTEGER);
