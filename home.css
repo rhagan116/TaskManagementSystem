@@ -1,0 +1,124 @@
+body{
+    color: aliceblue;
+    font-family: sans-serif;
+}
+
+.title h1{
+    font-size: 36px;
+    color: aliceblue;
+    margin: 50px 0px 0px 300px;
+}
+
+.calInfo{
+    position: absolute;
+    top: 100px;
+    left: 300px;
+    font-size: 26px;
+
+}
+
+.calWarning{
+    position: absolute;
+    top: 315px;
+    right: 610px;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.container{
+    margin-top: 100px;
+    margin-right: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.calendar{
+    width: 700px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 150px 0px 0px 200px;
+    padding: 10px;
+    background: #423956;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px 5px #262034, 0 2px 2px 2px #251f33;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.header button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background-color: #423956;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+.header button i{
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.monthYear{
+    font-size: 25px;
+    font-weight: 600;
+}
+.days{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+}
+
+.day{ /*days of the week displayed at the top*/ 
+    font-size: 25px;
+    text-align: center; 
+    padding: 5px;
+    color: #bdb8d7;  
+    margin-bottom: 10px;
+}
+
+.dates { /*number dates within the callender*/
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 30px;
+    font-size: 25px;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    transition: 0.2s;
+    border-radius: 50%;
+}
+
+.date:hover{
+    background-color: rgba(224, 223, 223, 0.5);
+}
+
+.date.active {
+    background-color: rgba(173, 126, 173, 0.7);
+}
+
+.dueDate{
+    background-color: rgba(240, 43, 43, 0.644);
+    color: aliceblue;
+    border-radius: 50%;
+}

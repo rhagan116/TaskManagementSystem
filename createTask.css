@@ -1,0 +1,29 @@
+body h2{
+    font-size: 36px;
+    margin-left: 300px;
+    margin-top: 40px;
+    color: aliceblue;
+}
+
+
+.addForm{
+
+    margin-top: 200px;
+    margin-left: 800px;
+    color: aliceblue;
+}
+
+
+.addForm input{
+    margin-top: 10px;
+    box-shadow: 0px 2px 10px 5px #262034, 0 2px 2px 2px #251f33;
+    border-color: #514869;
+    height: 25px;
+    width: 200px;
+    background: #514869;
+    margin-left: 10vh;
+    border-radius: 10px;
+    padding: 0px 4px 2px 5px;
+    border: none;
+    color: aliceblue;
+}

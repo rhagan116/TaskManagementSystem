@@ -1,0 +1,144 @@
+*{
+    font-family: sans-serif;
+    color: aliceblue;
+}
+
+body{
+    background: #2f2841;
+    display: flex;
+    flex-direction: column;
+}
+
+.line{
+    margin: auto;
+    margin-top: 2%;
+    border: none;
+    background: linear-gradient(to right, 
+    transparent 0%, /*start the line being transparent */
+    rgba(255, 255, 255, 0.5) 5%, /*white comes in at 5% of the line*/
+    rgba(255, 255, 255, 0.5) 95%, /*white ends at 95% of the line*/
+    transparent 100%); /*line goes transparent for final 5%*/
+    height: 1px;
+    width: 50vw;
+    border-radius: 50px;
+}
+
+
+.profile{
+    margin-top: 80px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    border-bottom: 50px;
+    padding: 10px;
+}
+
+.profile .text{
+    margin-top: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.profile h1{
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.profile h2{
+    font-weight: 100;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.profile h3{
+    font-weight: 100;
+}
+
+.profile h4{
+    margin-top: 10px;
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.profile{
+    margin-left: 50px;
+}
+.profile img{
+    position: absolute;
+    margin: 10vh 0vh 0vh 55vh;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.profile .image-wrapper button{
+    background-color: rgba(0, 0, 0, 0.6); /*black background that is see-through*/
+    border: none;
+    text-align: center;
+    position: relative;
+    margin: 10vh 0vh 0vh 55vh;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.profile .image-wrapper button i{
+    font-size: 30px; /*font size of the icon*/
+}
+
+.profile .image-wrapper button:hover{
+    transition: 0.4s;
+    opacity: 1;
+}
+
+.submitBtn{
+    margin-top: 5px;
+    color: black;
+}
+
+.edit{
+    font-size: 20px;
+    margin-top: 5vh;
+    flex-direction: column;
+    
+}
+
+.edit input{
+    margin-top: 10px;
+    box-shadow: 0px 2px 10px 5px #262034, 0 2px 2px 2px #251f33;
+    border-color: #514869;
+    height: 25px;
+    width: 200px;
+    background: #514869;
+    margin-left: 10vh;
+    border-radius: 10px;
+    padding: 0px 4px 2px 5px;
+    border: none;
+    
+}
+.edit .left{
+    float: left;
+    margin-left: 60vh;
+    
+}
+
+.edit .right{
+    float: right;
+    margin-right: 60vh;
+}
+
+.edit .right .bio input{
+    width: 250px;
+    height: 50px;    
+}
+
+.input{
+    position: absolute;
+    margin: 350px 0px 0px 770px;
+    border: none;
+}

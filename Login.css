@@ -1,0 +1,98 @@
+body{
+    display: flex;
+    justify-content: center; /*center items inside of the body tag*/
+    align-items: center;
+    min-height: 90vh; /*height of the items inside body tag*/
+    background-color: #201b2c;
+    font-family: sans-serif;
+}
+
+.Login{
+    box-shadow: 0px 20px 20px 10px #1b1725, 0 5px 5px 5px #1b1725;
+    width: 420px;
+    background: #2f2841;
+    color: #bdb8ce;
+    border-radius: 20px;
+    padding: 30px 40px;
+}
+
+.Login h1{
+    font-size: 38px;
+    text-align: center;
+}
+
+.Login .input-box{
+    box-shadow: 0px 2px 10px 5px #262034, 0 2px 2px 2px #251f33;
+    position: relative;
+    width: 98.3%;
+    height: 50px;
+    background: #514869;
+    padding-bottom: 5px;
+    padding-right: 7px;
+    margin: 30px 0; /*width between boxes*/
+    border-radius: 40px;
+}
+
+.input-box input{
+    width: 95%;
+    height: 100%;
+    min-height: 56px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 40px; /*curviture of the border*/
+    font-size: 16px;
+    color: aliceblue;
+    padding: 0px 4px 2px 20px;
+    
+}
+
+.input-box input::placeholder{
+    position: absolute;
+    left: 20px;
+    color: aliceblue
+    
+}
+
+.input-box i{
+    position: absolute;
+    right: 20px;
+    top: 36%;
+    font-size: 20px;
+}
+
+
+.Login .button input{
+    box-shadow: 0px 2px 10px 5px #262034, 0 2px 2px 2px #251f33;
+    width: 100%;
+    height: 45px;
+    border-radius: 40px;
+    background: #514869;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #05ea81;
+    font-weight: 600;   
+}
+
+.Login .button input:hover{
+    transition: ease-in-out 300ms;
+    background-color: #05ea81;
+    color: #201b2c;
+}
+
+
+.Login .signup-link{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-link p a{
+    color: #05ea81;
+}
+
+p a:hover {
+    transition: ease-in-out 100ms;
+    color: aliceblue;
+}
