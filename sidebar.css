@@ -85,9 +85,12 @@ body{
 }
 
 .user-info .create{
-    color: aliceblue;
+   
     border: 2px solid white;
     border-radius: 10px;
     background-color: aliceblues;
 }
 
+.create a{
+    color: aliceblue;
+}

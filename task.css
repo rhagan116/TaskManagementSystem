@@ -50,6 +50,17 @@
     border-bottom: 3px solid rgba(255,225,255,0.2);
 }
 
+.editTask{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.editTask a{
+    color: aliceblue;
+}
+
+
 .content{
     margin-top: 10px;
     position: absolute;
