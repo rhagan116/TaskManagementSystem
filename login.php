@@ -60,7 +60,7 @@
 
             <div class="signup-link">
                 <p>Don't Have an account?
-                <a href="#">Sign Up</a></p>
+                <a href="register.php">Sign Up</a></p>
             </div>
         </form>
     </div>

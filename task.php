@@ -37,7 +37,7 @@
             <div class="box">
                 <div class="box-title"><?php echo $taskTitle ?? "No Data Available"; ?></div>
                 <div class="line"></div>
-                <div class="editTask"><a href="editTask.php"><i class='bx bxs-edit'></a></i></div>
+                <div class="editTask"><a href="editTask.php?taskID=<?php echo $task['Task_ID']; ?>"><i class='bx bxs-edit'></a></i></div>
                 <div class="content"><?php echo $taskInfo ?? "No Data Available"; ?></div>
                 <div class="dnt">Date due: <?php echo $date ?? "No Data Available"; ?></div>
                 <div class="button">
