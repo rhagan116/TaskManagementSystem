@@ -121,10 +121,10 @@ body{
     border: none;
     
 }
+
 .edit .left{
     float: left;
-    margin-left: 60vh;
-    
+    margin-left: 60vh; 
 }
 
 .edit .right{

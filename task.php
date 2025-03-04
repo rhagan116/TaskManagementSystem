@@ -34,67 +34,21 @@
 
     <div class="container">
         <div class="boxes">
-            <div class="box">
-                <div class="box-title"><?php echo $taskTitle ?? "No Data Available"; ?></div>
-                <div class="line"></div>
-                <div class="editTask"><a href="editTask.php"><i class='bx bxs-edit'></a></i></div>
-                <div class="content"><?php echo $taskInfo ?? "No Data Available"; ?></div>
-                <div class="dnt">Date due: <?php echo $date ?? "No Data Available"; ?></div>
-                <div class="button">
-                    <a href="delTask.php?taskID=<?php echo $task['Task_ID']; ?>" onclick="return confirm('Are you sure you have completed this task? Once completed the task will be removed!');">Complete</a>
+            <!-- loop through the users tasks in the database and store them in an array -->
+            <?php while ($task = $result->fetchArray(SQLITE3_ASSOC)): ?>
+                <div class="box">
+                    <div class="box-title"><?php echo $task['Task_title']; ?></div>
+                    <div class="line"></div>
+                    <div class="editTask"><a href="editTask.php?taskID=<?php echo $task['Task_ID']; ?>"><i class='bx bxs-edit'></a></i></div>
+                    <div class="content"><?php echo $task['Task_info']; ?></div>
+                    <div class="dnt">Date due: <?php echo $task['Due_date']; ?></div>
+                    <div class="button">
+                        <a href="delTask.php?taskID=<?php echo $task['Task_ID']; ?>" onclick="return confirm('Are you sure you have completed this task? Once completed the task will be removed!');">Complete</a>
+                    </div>
                 </div>
-            </div>
-            <div class="box">
-                <div class="box-title">Task 2</div>
-                <div class="line"></div>
-                <div class="content">Task information</div>
-
-          
-            </div>
-            <div class="box">
-                <div class="box-title">Task 3</div>
-                <div class="line"></div>
-                <div class="content">Task information</div>
-
-        
-            </div>
-            <div class="box">
-                <div class="box-title">Task 4</div>
-                <div class="line"></div>
-                <div class="content">Task information</div>
-
-          
-            </div>
-            <div class="box">
-                <div class="box-title">Task 5</div>
-                <div class="line"></div>
-                <div class="content">Task information</div>
-
-    
-            </div>
-            <div class="box">
-                <div class="box-title">Task 6</div>
-                <div class="line"></div>
-                <div class="content">Task information</div>
-
-            </div>
-            <div class="box">
-                <div class="box-title">Task 7</div>
-                <div class="line"></div>
-                <div class="content">Task information</div>
-
- 
-            </div>
-            <div class="box">
-                <div class="box-title">Task 8</div>
-                <div class="line"></div>
-                <div class="content">Task information</div>
-
-        
-            </div>
+            <?php endwhile; ?>
         </div>
     </div>
-
 
 </body>
 </html>

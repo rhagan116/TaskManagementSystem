@@ -2,19 +2,45 @@
 
     session_start();
 
-    $userID = ['User_ID'];
-    $taskID = ['Task_ID'];
+    //take the task id and change it from being GET method to SESSION so it can be updated with the form
+    if (isset($_GET['taskID'])) {
+        $_SESSION['taskID'] = $_GET['taskID'];
+    }
 
+    $taskID = $_SESSION['taskID'];
+    $userID = $_SESSION['User_ID'];
+    
     $query = $db->prepare('SELECT Task_title, Task_info, Due_date FROM Tasks WHERE Task_ID=:taskID AND User_ID=:userID');
     $query->bindValue(':taskID', $taskID, SQLITE3_INTEGER);
     $query->bindValue(':userID', $userID, SQLITE3_INTEGER);
 
     $result = $query->execute();
-
     $task = $result->fetchArray(SQLITE3_ASSOC);
+
     $title = $task['Task_title'];
     $info = $task['Task_info'];
     $dueDate = $task['Due_date'];
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+        $newTitle = $_POST["title"];
+        $newInfo = $_POST["info"];
+        $newDate = $_POST["dueDate"];
+
+        $stmt = $db->prepare("UPDATE Tasks SET Task_title=:newTitle, Task_info=:info, Due_date=:newDate WHERE Task_ID =:taskID AND User_ID=:userID");
+
+        $stmt->bindValue(":newTitle", $newTitle, SQLITE3_TEXT);
+        $stmt->bindValue(":newInfo", $newInfo, SQLITE3_TEXT);
+        $stmt->bindValue(":newDate", $newDate, SQLITE3_TEXT);
+        $stmt->bindValue(":taskID", $taskID, SQLITE3_INTEGER);
+        $stmt->bindValue(":userID", $userID, SQLITE3_INTEGER);
+
+        if ($stmt->execute()){
+            echo "Task Updated!";
+        } else {
+            echo "There was an issue updating your task, please try again later!";
+        }
+    }
 
 ?>
 
@@ -38,6 +64,8 @@
 
     <div class="editForm">
         <form action="editTask.php" method="post">
+
+        
             <label for="title">Task Title:</label><br /><br />
             <input type="text" id="title" name="title" value ="<?php echo $title ?>"required><br /><br />
 
