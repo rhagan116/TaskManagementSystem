@@ -19,6 +19,7 @@
             session_start();
             //store the users id in the session to gather data on other pages
             $_SESSION['User_ID'] = $user['User_ID'];
+            
             header("Location: home.php");
             exit();
         } else{

@@ -42,7 +42,8 @@
     </div>
     
     <div class="user-info">
-        <div class="create"><a href="createTask.php">Create New Task</a></div>
+        <div class="group"><a href="createGroup.php">Create new group</a></div>
+        <div class="create"><a href="createTask.php">Create new task</a></div>
         <!--check if the pfp is empty and if it is then use the default profile picture -->
         <img src="<?php echo $pfp ?>">
         <p class="name"><?php echo $fname . ' ' . $lname .  ' (' . $role . ')'; ?></p>

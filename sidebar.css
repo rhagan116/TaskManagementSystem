@@ -84,13 +84,18 @@ body{
     color: white;
 }
 
-.user-info .create{
-   
-    border: 2px solid white;
-    border-radius: 10px;
-    background-color: aliceblues;
-}
-
 .create a{
     color: aliceblue;
+}
+
+.create a:hover{
+    text-decoration: underline;
+}
+
+.group a{
+    color: aliceblue;
+}
+
+.group a:hover{
+    text-decoration: underline;
 }
