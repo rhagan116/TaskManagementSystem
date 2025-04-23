@@ -32,6 +32,17 @@
         <ul>
             <li><a href="home.php"><i class='bx bx-building-house'></i> Home</a></li>
             <li><a href="task.php"><i class='bx bx-book-bookmark'></i> My Tasks</a></li>
+            <!--check if the user is an admin if they are then display the groups option on the sidebar -->
+            <!-- using conditional statements with php and html code https://stackoverflow.com/questions/3812526/conditional-statements-in-php-code-between-html-code -->
+            <?php if($role == "Team Admin"): ?>
+                <li><a href="group.php"><i class='bx bx-group'></i></i> Groups</a></li>
+                <!--change how far down the sign out button is on the sidebar this is needed because adding in the Groups section messus up the positioning -->
+                <style>
+                    .sidebar .signout{
+                        margin-top: 100%;
+                    }
+                </style>
+            <?php endif; ?>
             <li><a href="profile.php"><i class='bx bx-user-circle'></i> My Profile</a></li>
             <div class="signout"><li><a href="login.php"><i class='bx bx-log-out'></i> Sign Out</a></li></div>
         </ul>
@@ -42,9 +53,7 @@
     </div>
     
     <div class="user-info">
-        <div class="group"><a href="createGroup.php">Create new group</a></div>
         <div class="create"><a href="createTask.php">Create new task</a></div>
-        <!--check if the pfp is empty and if it is then use the default profile picture -->
         <img src="<?php echo $pfp ?>">
         <p class="name"><?php echo $fname . ' ' . $lname .  ' (' . $role . ')'; ?></p>
     </div>
