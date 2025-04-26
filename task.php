@@ -8,12 +8,6 @@
     $result = $query->execute();
     $task = $result->fetchArray(SQLITE3_ASSOC);
 
-    if($task){
-        $taskID = $task['Task_ID'];
-        $taskTitle = $task['Task_title'];
-        $taskInfo = $task['Task_info'];
-        $date = $task['Due_date'];
-    }
 ?>
 
 

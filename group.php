@@ -4,6 +4,13 @@
 
     $userID = $_SESSION['User_ID'];
 
+    //sql for displaying the groups
+    $viewQuery = $db->prepare('SELECT Group_ID, Group_name FROM Groups WHERE User_ID = :userID');
+    $viewQuery->bindValue(':userID', $userID, SQLITE3_INTEGER);
+    $result = $viewQuery->execute();
+
+
+    //sql for creating a new group
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
         $groupName = $_POST["title"];
@@ -36,19 +43,32 @@
 <body onload="loadsidebar()">
     <div id="sidebar"></div>
     <h2>Here are your group's!</h2>
-    <h3>Select a group to modify it or add tasks and users<h3>
+    <h3>Select a group to modify it or add tasks and users</h3>
 
+    <div class="container">
+        <div class="boxes">
+            <!-- loop through the users tasks in the database and store them in an array -->
+            <?php while ($group = $result->fetchArray(SQLITE3_ASSOC)): ?>
+                <div class="box">
+                    <div class="box-title"><a href="groupTasks.php"> <?php echo $group['Group_name']; ?> </a></div>
+                    <div class="line"></div>
+                    <div class="editGroup"><a href="editGroup.php?groupID=<?php echo $group['Group_ID']; ?>"><i class='bx bxs-edit'></a></i></div>
+
+                    <div class="button">
+                        <a href="delGroup.php?groupID=<?php echo $group['Group_ID']; ?>" onclick="return confirm('Are you sure you want to delete this group?');">Delete</a>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+        </div>
+    </div>
 
     <div class="addForm">
         <form action="group.php" method="post">
-            <label for="title">Group Name:</label><br /><br />
-            <input type="text" id="title" name="title" required><br /><br />
+            <label for="title">Create a group:</label><br /><br />
+            <input type="text" id="title" name="title" placeholder="Group Name" required><br /><br />
 
             <input type="submit" name="submit" value="Create"> <br /><br />
     </div>
 
-    <div class="create">
-        <div class=button><a href="createGroup.php" style="text-decoration:none;"> <i class='bx bx-user-plus' ></i> Create new group</a></div>
-    </div>
 </body>
 </html>
