@@ -5,18 +5,13 @@ body h2{
     color: aliceblue;
 }
 
-body h3{
-    font-size: 22px;
-    margin-left: 300px;
-    margin-top: 2%;
-    color: aliceblue;
-}
-
 .addForm{
-    margin-top: 20%;
+
+    margin-top: 200px;
     margin-left: 800px;
     color: aliceblue;
 }
+
 
 .addForm input{
     margin-top: 10px;

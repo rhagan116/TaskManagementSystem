@@ -28,19 +28,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="group.css">
+    <link rel="stylesheet" href="createGroup.css">
     <script src="script.js" defer></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>createGroup</title>
 </head>
 <body onload="loadsidebar()">
     <div id="sidebar"></div>
-    <h2>Here are your group's!</h2>
-    <h3>Select a group to modify it or add tasks and users<h3>
-
-
+    <h2>Create a new group!</h2>
+    
     <div class="addForm">
-        <form action="group.php" method="post">
+        <form action="createGroup.php" method="post">
             <label for="title">Group Name:</label><br /><br />
             <input type="text" id="title" name="title" required><br /><br />
 
@@ -48,7 +46,7 @@
     </div>
 
     <div class="create">
-        <div class=button><a href="createGroup.php" style="text-decoration:none;"> <i class='bx bx-user-plus' ></i> Create new group</a></div>
+        <div class=button><a href="createGroupTask.php" style="text-decoration:none;"> <i class='bx bx-user-plus' ></i> Create a group task</a></div>
     </div>
 </body>
 </html>

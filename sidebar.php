@@ -53,7 +53,7 @@
     </div>
     
     <div class="user-info">
-        <div class="create"><a href="createTask.php">Create new task</a></div>
+        <div class="create"><a href="createTask.php"><i class='bx bx-plus' ></i> Create new task</a></div>
         <img src="<?php echo $pfp ?>">
         <p class="name"><?php echo $fname . ' ' . $lname .  ' (' . $role . ')'; ?></p>
     </div>
