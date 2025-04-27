@@ -76,28 +76,25 @@
     left: 10px;
 }
 
-.button{
+.trash{
     position: absolute;
     bottom: 20px;
-    right: 40px;
+    right: 20px;
     width: 50px;
     
 }
 
-.button a{
+.trash a{
     display: inline-block;
     text-align: center;
     line-height: 20px;
-    border-radius: 20px;
     width: 70px;
     height: 22px;
-    background-color: rgb(221, 240, 255);
-    border: 1px solid grey;
-    font-size:14px; 
-    color: black;  
+    font-size: 27px; 
+    color: white;
 }
 
-.button a:hover{
+.trash a:hover{
     transition: 300ms;
-    box-shadow: 0px 2px 10px 5px #262034, 0 2px 2px 2px #251f33;
+    color: rgb(240, 55, 55);
 }

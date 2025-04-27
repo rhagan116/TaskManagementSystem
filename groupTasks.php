@@ -17,12 +17,6 @@
     
 ?>
 
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,15 +35,15 @@
     <div class="container">
         <div class="boxes">
             <!-- loop through the users tasks in the database and store them in an array -->
-            <?php while ($group = $result->fetchArray(SQLITE3_ASSOC)): ?>
+            <?php while ($groupTask = $result->fetchArray(SQLITE3_ASSOC)): ?>
                 <div class="box">
-                    <div class="box-title"><?php echo $group['groupTask_title']; ?></div>
+                    <div class="box-title"><?php echo $groupTask['groupTask_title']; ?></div>
                     <div class="line"></div>
-                    <div class="editTask"><a href="editTask.php?taskID=<?php echo $group['GroupTask_ID']; ?>"><i class='bx bxs-edit'></a></i></div>
-                    <div class="content"><?php echo $group['groupTask_info']; ?></div>
-                    <div class="dnt">Date due: <?php echo $group['taskDue_date']; ?></div>
-                    <div class="button">
-                        <a href="delgroupTask.php?GroupTaskID=<?php echo $task['GroupTask_ID']; ?>" onclick="return confirm('Are you sure you have completed this task? Once completed the task will be removed!');">Complete</a>
+                    <div class="editTask"><a href="editGroupTask.php?GroupTaskID=<?php echo $groupTask['GroupTask_ID']; ?>"><i class='bx bxs-edit'></a></i></div>
+                    <div class="content"><?php echo $groupTask['groupTask_info']; ?></div>
+                    <div class="dnt">Date due: <?php echo $groupTask['taskDue_date']; ?></div>
+                    <div class="trash">
+                        <a href="delGroupTask.php?GroupTaskID=<?php echo $groupTask['GroupTask_ID']; ?>" onclick="return confirm('Are you sure you have completed this task? Once completed the task will be removed!');"><i class='bx bx-trash-alt' ></i></a>
                     </div>
                 </div>
             <?php endwhile; ?>

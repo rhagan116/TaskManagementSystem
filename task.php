@@ -36,8 +36,8 @@
                     <div class="editTask"><a href="editTask.php?taskID=<?php echo $task['Task_ID']; ?>"><i class='bx bxs-edit'></a></i></div>
                     <div class="content"><?php echo $task['Task_info']; ?></div>
                     <div class="dnt">Date due: <?php echo $task['Due_date']; ?></div>
-                    <div class="button">
-                        <a href="delTask.php?taskID=<?php echo $task['Task_ID']; ?>" onclick="return confirm('Are you sure you have completed this task? Once completed the task will be removed!');">Complete</a>
+                    <div class="trash">
+                        <a href="delTask.php?taskID=<?php echo $task['Task_ID']; ?>" onclick="return confirm('Are you sure you have completed this task? Once completed the task will be removed!');"><i class='bx bx-trash-alt' ></i></a>
                     </div>
                 </div>
             <?php endwhile; ?>
