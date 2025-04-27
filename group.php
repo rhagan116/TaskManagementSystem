@@ -50,7 +50,7 @@
             <!-- loop through the users tasks in the database and store them in an array -->
             <?php while ($group = $result->fetchArray(SQLITE3_ASSOC)): ?>
                 <div class="box">
-                    <div class="box-title"><a href="groupTasks.php"> <?php echo $group['Group_name']; ?> </a></div>
+                    <div class="box-title"><a href="groupTasks.php?groupID=<?php echo $group['Group_ID']; ?>"> <?php echo $group['Group_name']; ?> </a></div>
                     <div class="line"></div>
                     <div class="editGroup"><a href="editGroup.php?groupID=<?php echo $group['Group_ID']; ?>"><i class='bx bxs-edit'></a></i></div>
 
@@ -61,6 +61,8 @@
             <?php endwhile; ?>
         </div>
     </div>
+
+    <hr class="seperator">
 
     <div class="addForm">
         <form action="group.php" method="post">
