@@ -7,9 +7,10 @@ body h2{
 
 
 .editForm{
+    position: absolute;
     font-size: 20px;
-    margin-top: 200px;
-    margin-left: 800px;
+    top: 24%;
+    left: 20%;
     color: aliceblue;
 }
 
@@ -26,4 +27,5 @@ body h2{
     padding: 0px 4px 2px 5px;
     border: none;
     color: aliceblue;
+    font-size: 16px;
 }

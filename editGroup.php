@@ -18,6 +18,7 @@
 
     $groupName = $group['Group_name'];
 
+    //group name form
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
         $newName = $_POST["name"];
@@ -36,7 +37,30 @@
         }
     }
 
+    //add task form 
+    if (isset($_POST['addTask'])){
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+            $taskTitle = $_POST["title"];
+            $taskInfo = $_POST["info"];
+            $taskDate = $_POST["dueDate"];
     
+            $stmt = $db->prepare("INSERT INTO Group_Tasks (groupTask_title, groupTask_info, taskDue_date, Group_ID)
+            VALUES (:title, :info, :dueDate, :groupID)");
+    
+            
+            $stmt->bindValue(':title', $taskTitle, SQLITE3_TEXT);
+            $stmt->bindValue(':info', $taskInfo, SQLITE3_TEXT);
+            $stmt->bindValue(':dueDate', $taskDate, SQLITE3_TEXT);
+            $stmt->bindValue(':groupID', $groupID, SQLITE3_INTEGER);
+    
+            if ($stmt->execute()) {
+                echo "Task added!";
+            } else{
+                echo "There was an error adding your task. Please try again later!";
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -59,9 +83,26 @@
         <form action="editGroup.php" method="post">
         
             <label for="name">Group Name:</label><br /><br />
-            <input type="name" id="name" name="name" value ="<?php echo $groupName ?>"required><br /><br />
+            <input type="text" id="name" name="name" value ="<?php echo $groupName ?>"required><br /><br />
 
             <input type="submit" name="submit" value="Update"> <br /><br />
     </div>
+
+    <!-- task input form here -->
+    <div class="addForm">
+        <form action="editGroup.php" method="post">
+            
+            <label for="title">Task Title:</label><br /><br />
+            <input type="text" id="title" name="title" required><br /><br />
+
+            <label for="info">Task Info:</label><br /><br />
+            <input type="text" id="info" name="info" required><br /><br />
+
+            <label for="date">Due Date:</label><br /><br />
+            <input type="text" id="dueDate" name="dueDate" placeholder="Please format YYYY-MM-DD" required><br /><br />
+
+            <input type="submit" name="addTask" value="Add Task"> <br /><br />
+    </div>
+
 </body>
 </html>

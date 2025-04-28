@@ -54,8 +54,8 @@
                     <div class="line"></div>
                     <div class="editGroup"><a href="editGroup.php?groupID=<?php echo $group['Group_ID']; ?>"><i class='bx bxs-edit'></a></i></div>
 
-                    <div class="button">
-                        <a href="delGroup.php?groupID=<?php echo $group['Group_ID']; ?>" onclick="return confirm('Are you sure you want to delete this group?');">Delete</a>
+                    <div class="trash">
+                        <a href="delGroup.php?groupID=<?php echo $group['Group_ID']; ?>" onclick="return confirm('Are you sure you want to delete this group?');"><i class='bx bx-trash-alt' ></i></a>
                     </div>
                 </div>
             <?php endwhile; ?>

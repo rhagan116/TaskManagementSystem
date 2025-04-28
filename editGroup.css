@@ -12,6 +12,14 @@ body h3{
     color: aliceblue;
 }
 
+body h4{
+    position: absolute;
+    font-size: 22px;
+    right: 40%;
+    top: 20%;
+    color: aliceblue;
+}
+
 .editForm{
     position: absolute;
     font-size: 20px;
@@ -22,6 +30,30 @@ body h3{
 
 
 .editForm input{
+    margin-top: 10px;
+    box-shadow: 0px 2px 10px 5px #262034, 0 2px 2px 2px #251f33;
+    border-color: #514869;
+    height: 30px;
+    width: 300px;
+    background: #514869;
+    margin-left: 10vh;
+    border-radius: 10px;
+    padding: 0px 4px 2px 5px;
+    border: none;
+    color: aliceblue;
+    font-size: 20px;
+}
+
+.addForm{
+    position: absolute;
+    font-size: 20px;
+    top: 24%;
+    right: 27%;
+    color: aliceblue;
+}
+
+
+.addForm input{
     margin-top: 10px;
     box-shadow: 0px 2px 10px 5px #262034, 0 2px 2px 2px #251f33;
     border-color: #514869;
