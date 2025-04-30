@@ -9,6 +9,7 @@
 
             if($query->execute()) {
                 
+                //go back to the group tasks
                 header("Location: groupTasks.php");
         
             } else{

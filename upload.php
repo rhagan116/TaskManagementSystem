@@ -19,9 +19,9 @@
             $stmt->bindValue(":fileUpload", $target_file, SQLITE3_TEXT);
 
             if ($stmt->execute()){
-                echo "<br>Profile picture updated!";
+                echo '<div class="echo-style">Profile picture updated!</div>';
             } else {
-                echo "<br>There was an error updating the profile picture. Please try again later.";
+                echo '<div class="echo-style">There was an error updating the profile picture. Please try again later!</div>';
             }
         }
         

@@ -39,9 +39,9 @@
             $stmt->bindValue(":taskID", $taskID, SQLITE3_INTEGER);
 
             if ($stmt->execute()){
-                echo "Task Updated!";
+                echo '<div class="echo-style">Task added!</div>';
             } else {
-                echo "There was an issue updating your task, please try again later!";
+                echo '<div class="echo-style">There was an issue adding your task, please try again later!</div>';
             }
         }
 
@@ -58,7 +58,7 @@
             $user = $getResult->fetchArray(SQLITE3_ASSOC);
 
             if (!$user) {
-                echo "User not found, please enter a valid username";
+                echo '<div class="echo-style">User not found, please enter a valid username</div>';
             } else{
 
                 $userID = $user['User_ID'];
@@ -71,9 +71,9 @@
                 $addQuery->bindValue(':userID', $userID, SQLITE3_INTEGER);
 
                 if ($addQuery->execute()) {
-                    echo "User Added!";
+                    echo '<div class="echo-style">User added!</div>';
                 } else{
-                    echo "There was an error adding the user, Please try again later!";
+                    echo '<div class="echo-style">There was an error adding the user, Please try again later!</div>';
                 }
             }
         }

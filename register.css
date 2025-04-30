@@ -99,4 +99,11 @@ body h2{
     text-align: center;
 }
 
+.echo-style{
+    position: absolute;
+    color: white;
+    left: 46%;
+    font-size:20px;
+}
+
 

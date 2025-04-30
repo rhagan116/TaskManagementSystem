@@ -22,9 +22,9 @@
         $stmt->bindValue(':userID', $userID, SQLITE3_INTEGER);
 
         if ($stmt->execute()) {
-            echo "Group Created!";
+            echo '<div class="echo-style">Group Created!</div>';
         } else{
-            echo "There was an error creating your group, Please try again later!";
+            echo '<div class="echo-style">There was an error creating your group, Please try again later!</div>';
         }
     }
 

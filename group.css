@@ -133,3 +133,10 @@ body h3{
 .addForm label{
     font-size: 22px;
 }
+
+.echo-style{
+    position: absolute;
+    color: white;
+    left: 46%;
+    font-size:20px;
+}

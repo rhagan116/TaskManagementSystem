@@ -97,3 +97,10 @@ p a:hover {
     transition: ease-in-out 100ms;
     color: aliceblue;
 }
+
+.echo-style{
+    position: absolute;
+    color: white;
+    left: 46%;
+    font-size:20px;
+}

@@ -56,3 +56,10 @@ body h2{
     text-decoration: none;
     color: aliceblue;
 }
+
+.echo-style{
+    position: absolute;
+    color: white;
+    left: 46%;
+    font-size:20px;
+}

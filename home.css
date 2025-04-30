@@ -122,3 +122,10 @@ body{
     color: aliceblue;
     border-radius: 50%;
 }
+
+.echo-style{
+    position: absolute;
+    color: white;
+    left: 46%;
+    font-size:20px;
+}

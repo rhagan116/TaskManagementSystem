@@ -50,3 +50,9 @@ body h2{
 .button a:hover{
     border: 2px solid aliceblue;
 }
+
+.echo-style{
+    position: absolute;
+    color: white;
+    left: 60%;
+}

@@ -27,3 +27,10 @@ body h2{
     border: none;
     color: aliceblue;
 }
+
+.echo-style{
+    position: absolute;
+    color: white;
+    left: 46%;
+    font-size:20px;
+}

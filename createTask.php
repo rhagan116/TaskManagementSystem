@@ -6,10 +6,12 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
+        //take the information from the form 
         $newTitle = $_POST["title"];
         $newInfo = $_POST["info"];
         $newDate = $_POST["dueDate"];
 
+        //insert the task into the database
         $stmt = $db->prepare("INSERT INTO Tasks (Task_title, Task_info, Due_date, User_ID)
         VALUES (:title, :info, :dueDate, :userID)");
 
@@ -20,9 +22,9 @@
         $stmt->bindValue(':userID', $userID, SQLITE3_INTEGER);
 
         if ($stmt->execute()) {
-            echo "Task added!";
+            echo '<div class="echo-style">Task added!</div>';
         } else{
-            echo "There was an error adding your task. Please try again later!";
+            echo '<div class="echo-style">There was an error adding your task. Please try again later!</div>'
         }
     }
 ?>

@@ -108,3 +108,10 @@ body{
 .group a:hover{
     text-decoration: underline;
 }
+
+.echo-style{
+    position: absolute;
+    color: white;
+    left: 46%;
+    font-size:20px;
+}

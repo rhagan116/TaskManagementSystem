@@ -9,6 +9,8 @@
         $query->bindValue(':taskID', $taskID, SQLITE3_INTEGER);
 
             if($query->execute()) {
+
+                //go back to the edit group tasks page
                 header("Location: editGroupTask.php");
         
             } else{

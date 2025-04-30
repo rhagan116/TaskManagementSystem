@@ -6,7 +6,9 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
+        //take the group name from the form 
         $groupName = $_POST["title"];
+
 
         $stmt = $db->prepare("INSERT INTO Groups (Group_name, User_ID) 
         VALUES (:title, :userID)");
@@ -15,9 +17,9 @@
         $stmt->bindValue(':userID', $userID, SQLITE3_INTEGER);
 
         if ($stmt->execute()) {
-            echo "Group Created!";
+            echo '<div class="echo-style">Group Created!</div>';
         } else{
-            echo "There was an error creating your group, Please try again later!";
+            echo '<div class="echo-style">There was an error creating your group, please try again later!</div>';
         }
     }
 

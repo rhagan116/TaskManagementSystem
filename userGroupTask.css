@@ -66,3 +66,10 @@ body h2{
     bottom: 20px;
     left: 10px;
 }
+
+.echo-style{
+    position: absolute;
+    color: white;
+    left: 46%;
+    font-size:20px;
+}

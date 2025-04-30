@@ -26,9 +26,9 @@
         $query->bindValue(':urole', $urole, SQLITE3_TEXT);
 
         if ($query->execute()) {
-            echo "Account created successfully!";
+            echo '<div class="echo-style">Account created successfully!</div>';
         } else{
-            echo "There was an error creating your account. Please try again later!";
+            echo '<div class="echo-style">There was an error creating your account. Please try again later!</div>';
         }
 
     }

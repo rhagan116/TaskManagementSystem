@@ -98,3 +98,10 @@
     transition: 300ms;
     color: rgb(240, 55, 55);
 }
+
+.echo-style{
+    position: absolute;
+    color: white;
+    left: 46%;
+    font-size:20px;
+}

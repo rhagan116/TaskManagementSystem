@@ -31,9 +31,9 @@
 
 
         if ($update->execute()){
-            echo "Group name succesfully updated!";
+            echo '<div class="echo-style">Group name successfully updated!</div>';
         } else {
-            echo "There was an issue updating your group, please try again later!";
+            echo '<div class="echo-style">There was an issue updating your group, please try again!</div>';
         }
     }
 
@@ -55,9 +55,9 @@
             $stmt->bindValue(':groupID', $groupID, SQLITE3_INTEGER);
     
             if ($stmt->execute()) {
-                echo "Task added!";
+                echo '<div class="echo-style">Task added!</div>';
             } else{
-                echo "There was an error adding your task. Please try again later!";
+                echo '<div class="echo-style">There was an error adding your task, please try again later!</div>';
             }
         }
     }

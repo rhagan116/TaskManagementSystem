@@ -36,16 +36,13 @@
         $stmt->bindValue(":userID", $userID, SQLITE3_INTEGER);
 
         if ($stmt->execute()){
-            echo "Task Updated!";
+            echo '<div class="echo-style">Task added!</div>';
         } else {
-            echo "There was an issue updating your task, please try again later!";
+            echo '<div class="echo-style">There was an issue updating your task, please try again later!</div>';
         }
     }
 
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">

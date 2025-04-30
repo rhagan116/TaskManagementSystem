@@ -38,9 +38,9 @@
         $stmt->bindValue(":bio", $newBio, SQLITE3_TEXT);
 
         if ($stmt->execute()){
-            echo "Profile Updated!";
+            echo '<div class="echo-style">Profile updated!</div>';
         } else {
-            echo "There was an issue updating your profile, please try again later!";
+            echo '<div class="echo-style">There was an issue updating your profile, please try again later!</div>';
         }
     }
 ?>

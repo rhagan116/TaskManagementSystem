@@ -113,3 +113,10 @@ body h3{
     border-radius: 20px;
     transition: 500ms;
 }
+
+.echo-style{
+    position: absolute;
+    color: white;
+    left: 46%;
+    font-size:20px;
+}
