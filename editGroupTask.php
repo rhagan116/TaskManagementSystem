@@ -57,24 +57,25 @@
             $getResult = $getQuery->execute();
             $user = $getResult->fetchArray(SQLITE3_ASSOC);
 
-            $userID = $user['User_ID'];
-
-            //put the user id into the group task users database 
-            $addQuery = $db->prepare('INSERT INTO Group_Task_Users (GroupTask_ID, User_ID)
-            VALUES (:groupTaskID, :userID)');
-
-            $addQuery->bindValue(':groupTaskID', $taskID, SQLITE3_INTEGER);
-            $addQuery->bindValue(':userID', $userID, SQLITE3_INTEGER);
-
-            if ($addQuery->execute()) {
-                echo "User Added!";
+            if (!$user) {
+                echo "User not found, please enter a valid username";
             } else{
-                echo "There was an error adding the user, Please try again later!";
+
+                $userID = $user['User_ID'];
+
+                //put the user id into the group task users database 
+                $addQuery = $db->prepare('INSERT INTO Group_Task_Users (GroupTask_ID, User_ID)
+                VALUES (:groupTaskID, :userID)');
+
+                $addQuery->bindValue(':groupTaskID', $taskID, SQLITE3_INTEGER);
+                $addQuery->bindValue(':userID', $userID, SQLITE3_INTEGER);
+
+                if ($addQuery->execute()) {
+                    echo "User Added!";
+                } else{
+                    echo "There was an error adding the user, Please try again later!";
+                }
             }
-
-
-
-            
         }
     }
 ?>
@@ -120,6 +121,38 @@
 
             <input type="submit" name="addUser" value="Add"> <br /><br />
         </form>
+    </div>
+
+    <h3>Members working on this task</h3>
+    <div class="viewUser">
+        <?php include('db.php');
+
+            echo "<table>";
+            echo "<tr> <th>Username</th> </tr>";
+        
+            $idQuery = $db->prepare('SELECT User_ID FROM Group_Task_Users WHERE GroupTask_ID = :taskID');
+            $idQuery->bindValue(':taskID', $taskID, SQLITE3_INTEGER);
+            $idResult = $idQuery->execute();
+
+            while ($idRow = $idResult->fetchArray(SQLITE3_ASSOC)) {
+                $grpUserID = $idRow['User_ID'];
+
+                $viewQuery = $db->prepare('SELECT Username FROM User WHERE User_ID = :userID');
+                $viewQuery->bindValue(':userID', $grpUserID, SQLITE3_INTEGER);
+                $viewResult = $viewQuery->execute();
+
+                $grpUser = $viewResult->fetchArray(SQLITE3_ASSOC); 
+                $grpUsername = $grpUser['Username'];
+
+                $link = "delGroupUser.php?User_ID=$grpUserID&GroupTask_ID=$taskID";
+                echo "<tr>
+                        <td>$grpUsername</td>
+                        <td> <a href='$link?>'> Remove </a> </td>
+                    </tr>";
+            }
+            echo "</table>";
+        ?>
+        
     </div>
 </body>
 </html>

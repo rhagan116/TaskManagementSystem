@@ -5,6 +5,13 @@ body h2{
     color: aliceblue;
 }
 
+body h3{
+    position: absolute;
+    font-size: 24px;
+    top: 15%;
+    right: 24.6%;
+    color: aliceblue;
+}
 
 .editForm{
     position: absolute;
@@ -32,8 +39,8 @@ body h2{
 
 .addUser{
     position: absolute;
-    top: 25%;
-    right: 20%;
+    top: 70%;
+    left: 20%;
     color: aliceblue;
 }
 
@@ -42,15 +49,67 @@ body h2{
     box-shadow: 0px 2px 10px 5px #262034, 0 2px 2px 2px #251f33;
     border-color: #514869;
     height: 30px;
-    width: 200px;
+    width: 300px;
     background: #514869;
     margin-left: 10vh;
     border-radius: 10px;
     padding: 0px 4px 2px 5px;
     border: none;
     color: aliceblue;
+    font-size: 16px;
 }
 
 .addUser label{
     font-size: 16px;
+}
+
+.viewUser{
+    position: absolute;
+    top: 24%;
+    right: 21.8%;
+    background-color: #423956;
+    box-shadow: 0px 2px 10px 5px #262034, 0 2px 2px 2px #251f33;
+    border-radius: 20px;
+    width: 400px;
+    height: relative;
+}
+
+.viewUser table{
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.viewUser table{
+    border-spacing: 0 20px;
+    border-collapse: separate;
+}
+
+.viewUser td{
+    padding: 20px 10px 0px 40px;
+}
+
+.viewUser td a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.viewUser td a:hover{
+    text-decoration: none;
+    color: rgb(248, 74, 74);
+}
+
+.box{
+    
+    background-color: #423956;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 10px 5px #262034, 0 2px 2px 2px #251f33;
+    font-size: 30px;
+    color: aliceblue;
+    width: 300px;
+    height: 350px;
+    border: 1px solid #262034;
+    border-radius: 20px;
+    transition: 500ms;
 }

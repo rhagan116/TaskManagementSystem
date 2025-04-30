@@ -26,6 +26,8 @@
 
     <div class="title"><h1>Here are your upcoming tasks!</h1></div>
 
+    <div class="group"><a href="userGroups.php"><i class='bx bx-group'></i>View groups</a></div>
+
     <div class="container">
         <div class="boxes">
             <!-- loop through the users tasks in the database and store them in an array -->

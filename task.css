@@ -4,6 +4,25 @@
     margin: 50px 0px 0px 300px;
 }
 
+.group a{
+    position: absolute;
+    text-align: center;
+    line-height: 36px;
+    top: 16%;
+    right: 15%;
+    border-radius: 20px;
+    width: 150px;
+    height: 40px;
+    background-color: #423956;
+    font-size:14px; 
+    color: white;  
+    border: 2px solid #201b2c;
+}
+
+.group a:hover{
+    border: 2px solid aliceblue;
+}
+
 .container{
     display: flex;
     justify-content: center;
