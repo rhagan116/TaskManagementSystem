@@ -46,7 +46,7 @@
 <body onload="loadsidebar()">
     <div id="sidebar"></div>
 
-    <div class="title"><h1>Here are your upcoming group Tasks!</h1></div>
+    <h2>Here are your upcoming group Tasks!</h2>
 
     <div class="group"><a href="userGroupTask.php"><i class='bx bx-group'></i>View group tasks</a></div>
 

@@ -51,3 +51,18 @@ body h2{
     
     border-bottom: 3px solid rgba(255,225,255,0.2);
 }
+
+.content{
+    margin-top: 10px;
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    font-size: 20px;
+}
+
+.dnt{
+    position: absolute;
+    font-size: 18px;
+    bottom: 20px;
+    left: 10px;
+}
