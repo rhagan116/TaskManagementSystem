@@ -7,13 +7,22 @@
         $username = $_POST ['user'];
         $password = $_POST ['password'];
 
-        //check the data the user has entered against the database
-        $check = $db-> prepare('SELECT User_ID FROM User WHERE Username = :username AND Password = :password');
+        //check the username against the database
+        $check = $db->prepare('SELECT User_ID, Password FROM User WHERE Username = :username');
         $check->bindValue(':username', $username, SQLITE3_TEXT);
-        $check->bindValue(':password', $password, SQLITE3_TEXT);
         $result = $check->execute();
-
+        
         $user = $result->fetchArray(SQLITE3_ASSOC);
+        
+        //check the entered password against the hashed one in the database
+        if ($user && password_verify($password, $user['Password'])) {
+            session_start();
+            $_SESSION['User_ID'] = $user['User_ID'];
+            header("Location: home.php");
+            exit();
+        } else {
+            echo '<script>alert("Error: Incorrect Username or Password")</script>';
+        }
         //send user through or display error message
         if ($user) {
             session_start();

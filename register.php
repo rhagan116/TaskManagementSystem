@@ -3,7 +3,8 @@
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         $username = $_POST['username'];
-        $password = $_POST['pass'];
+        //use a hashmap on the password for security
+        $password = password_hash($_POST['pass'], PASSWORD_DEFAULT);
         $fname = $_POST['fname'];
         $mname = $_POST['mname'];
         $lname = $_POST['lname'];

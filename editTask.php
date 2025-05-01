@@ -28,7 +28,7 @@
         $newInfo = $_POST["info"];
         $newDate = $_POST["dueDate"];
 
-        $stmt = $db->prepare("UPDATE Tasks SET Task_title=:newTitle, Task_info=:info, Due_date=:newDate WHERE Task_ID =:taskID AND User_ID=:userID");
+        $stmt = $db->prepare("UPDATE Tasks SET Task_title=:newTitle, Task_info=:newInfo, Due_date=:newDate WHERE Task_ID =:taskID AND User_ID=:userID");
 
         $stmt->bindValue(":newTitle", $newTitle, SQLITE3_TEXT);
         $stmt->bindValue(":newInfo", $newInfo, SQLITE3_TEXT);
@@ -37,7 +37,7 @@
         $stmt->bindValue(":userID", $userID, SQLITE3_INTEGER);
 
         if ($stmt->execute()){
-            echo '<div class="echo-style">Task added!</div>';
+            echo '<div class="echo-style">Task Updated!</div>';
         } else {
             echo '<div class="echo-style">There was an issue updating your task, please try again later!</div>';
         }

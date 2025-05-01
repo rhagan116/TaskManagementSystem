@@ -24,7 +24,7 @@
         if ($stmt->execute()) {
             echo '<div class="echo-style">Task added!</div>';
         } else{
-            echo '<div class="echo-style">There was an error adding your task. Please try again later!</div>'
+            echo '<div class="echo-style">There was an error adding your task. Please try again later!</div>';
         }
     }
 ?>
