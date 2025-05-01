@@ -9,6 +9,7 @@
 
     $taskID = $_SESSION['GroupTaskID'];
     
+    //use the task id to get the group task information
     $query = $db->prepare('SELECT groupTask_title, groupTask_info, taskDue_date 
     FROM Group_Tasks 
     WHERE GroupTask_ID=:taskID');

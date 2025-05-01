@@ -31,17 +31,21 @@
     <div class="calInfo">Here is your month summarised:</div>
     <div class="calWarning">*please note your upcoming tasks are displayed in red</div>
 
+    <!--setting up the content for the calendar -->
     <div class="container">
         <div class="calendar">
             <div class="header">
                 <button id="prevMonth">
+                    <!--arrow to go back one month -->
                     <i class='bx bx-chevron-left'></i>
                 </button>
                 <div class="monthYear" id="monthYear"></div>
                 <button id="nextMonth">
+                    <!--arrow to go to the next month -->
                     <i class='bx bx-chevron-right' ></i>
                 </button>
             </div>
+                <!--day titles at the top of the calender  -->
                 <div class="days">
                     <div class="day">Mon</div>
                     <div class="day">Tue</div>

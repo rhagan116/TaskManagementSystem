@@ -10,6 +10,7 @@
     $userID = $_SESSION['User_ID'];
     $groupID = $_SESSION['Group_ID'];
 
+    //select the group task information to display it on the page
     $query = $db->prepare('SELECT GroupTask_ID, groupTask_title, groupTask_info, groupTask_status, taskDue_date FROM Group_Tasks WHERE Group_ID =:groupID');
     $query->bindValue(':userID', $userID, SQLITE3_INTEGER);
     $query->bindValue(':groupID', $groupID, SQLITE3_INTEGER);

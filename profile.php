@@ -64,6 +64,7 @@
         <div class="image-wrapper">
         <img src="<?php echo $pfp ?>">
         <form action="upload.php" method="post" enctype="multipart/form-data">
+            <!--stuff to be displayed when the user hovers over the profile picture icon -->
             <button>
                 <i class='bx bx-user-plus'></i><br />Change Profile <br />Picture
                 <input type="file" id="fileUpload" name="fileUpload" class="uploadBtn" accept=".jpg, .png, .jpeg">

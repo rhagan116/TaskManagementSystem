@@ -21,6 +21,7 @@
     $info = $task['Task_info'];
     $dueDate = $task['Due_date'];
 
+    //update the task information with the data from the form
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
         $newTitle = $_POST["title"];
