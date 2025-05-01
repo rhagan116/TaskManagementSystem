@@ -18,6 +18,7 @@ body{
 }
 
 .home .sidebar{
+    font-size: 18px;
     position: fixed;
     width: 250px;
     height: 100%;

@@ -63,6 +63,7 @@
     <div class="profile">
         <div class="image-wrapper">
         <img src="<?php echo $pfp ?>">
+        <!--how to show text over an image when hovering over it https://stackoverflow.com/questions/14263594/how-to-show-text-on-image-when-hovering -->
         <form action="upload.php" method="post" enctype="multipart/form-data">
             <!--stuff to be displayed when the user hovers over the profile picture icon -->
             <button>
